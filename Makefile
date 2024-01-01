@@ -3,6 +3,8 @@ build:
 
 up:
 	docker compose -f local.yml up -d
+restart-client:
+	docker-compose -f local.yml restart client
 
 down:
 	docker compose -f local.yml down
@@ -17,7 +19,7 @@ show-logs-api:
 	docker compose -f local.yml logs api
 
 show-logs-client:
-	docker client -f local.yml logs client
+	docker compose -f local.yml logs client
 
 user:
 	docker run --rm mern-invoice-api whoami
