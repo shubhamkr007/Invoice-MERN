@@ -14,7 +14,7 @@ services:
     #   - "2001:2001"
     environment:
       NODE_ENV: ${NODE_ENV}
-      MONGODB_URI: mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@mongodb
+      MONGO_URI: mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@mongodb
       FORCE_COLOR: 1
     networks:
       - invoice
