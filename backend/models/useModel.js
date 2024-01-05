@@ -14,14 +14,14 @@ const userSchema = new Schema({
         required: true,
         validate:[validator.isEmail, "Please Provied a valid email"] 
     },
-    usename:{
+    username:{
         type: String,
         required: true,
         unique: true,
         trim: true,
         validate:{
             validator: function(value){
-                return /^[A-z][A-z0-9-_]{3,23$/.test(value);
+                return /^[A-z][A-z0-9-_]{3,23}$/.test(value);
             },
             message: "username must be alphanumeric, without any special characters. Hyphens and underscores allowed"
         }

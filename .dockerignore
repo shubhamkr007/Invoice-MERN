@@ -1,7 +1,11 @@
 logs
+
 *.log
+
 npm-debug.log*
+
 .git
 node_modules/
 .env
+
 .npm
