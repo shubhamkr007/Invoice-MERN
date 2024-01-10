@@ -23,6 +23,7 @@ const chechAuth = asyncHandler(async (req, res, next) => {
                 req.user = await User.findById(userId).select("-password")
 
                 req.roles = decoded.roles;
+                next();
             }
         )
     }
