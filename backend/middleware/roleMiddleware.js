@@ -11,11 +11,14 @@ const checkRole = (...allowedRoles) => {
             res.status(401);
             throw new Error('Not authorized, user not logged in');
         }
+        // console.log(req.user);
 
         const rolesArray = [...allowedRoles]
-        const roleFound = req.roles
+        // console.log(rolesArray, req.role);
+        const roleFound = req.user.roles
             .map((role) => rolesArray.includes(role))
-            .find(((value) => value === true));
+            .find((value) => value === true);
+
 
         if (!roleFound) {
             res.status(401);
