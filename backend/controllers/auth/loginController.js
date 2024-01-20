@@ -9,10 +9,11 @@ import { systemLogs } from '../../utils/Logger.js'
 
 const loginUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
+    console.log(req.body);
 
     if (!email || !password) {
         res.status(400)
-        throw new Error("Please an email and password")
+        throw new Error("Please an Enter an email and password")
     }
 
     const existingUser = await User.findOne({ email }).select("+password");
